@@ -5,10 +5,16 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { SeasonsComponent } from "./seasons/seasons.component";
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatToolbarModule],
+  declarations: [AppComponent, SeasonsComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
