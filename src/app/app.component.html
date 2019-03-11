@@ -1,5 +1,14 @@
-<mat-toolbar color="primary">
-  <span>{{ title }}</span>
+<mat-toolbar class="header" color="primary">
+  <span>Rick and Morty</span>
 </mat-toolbar>
 
 <router-outlet></router-outlet>
+
+<mat-drawer-container>
+  <mat-drawer mode="side" opened>
+    <app-seasons></app-seasons>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-season></app-season>
+  </mat-drawer-content>
+</mat-drawer-container>
