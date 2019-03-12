@@ -1,1 +1,7 @@
-<h2>{{ season.name }}</h2>
+<div class="content" *ngIf="isLoading; else showEpisodes">
+  <mat-spinner class="content__loader"></mat-spinner>
+</div>
+
+<ng-template #showEpisodes>
+  <h2>{{ season.name }}</h2>
+</ng-template>
