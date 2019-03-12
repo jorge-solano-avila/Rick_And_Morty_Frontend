@@ -1,6 +1,10 @@
 <h3>Seasons</h3>
-<mat-list role="list">
-  <mat-list-item *ngFor="let season of seasons" role="listitem">
+<mat-list>
+  <mat-list-item
+    class="mat-list-option"
+    *ngFor="let season of seasons"
+    (click)="select(season)"
+  >
     {{ season.name }}
   </mat-list-item>
 </mat-list>
