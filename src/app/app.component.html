@@ -6,9 +6,9 @@
 
 <mat-drawer-container>
   <mat-drawer mode="side" opened>
-    <app-seasons></app-seasons>
+    <app-seasons (selected)="onSelected($event)"></app-seasons>
   </mat-drawer>
   <mat-drawer-content>
-    <app-season></app-season>
+    <app-season [season]="selectedSeason"></app-season>
   </mat-drawer-content>
 </mat-drawer-container>

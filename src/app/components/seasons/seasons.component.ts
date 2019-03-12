@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, EventEmitter, Output, OnInit } from "@angular/core";
 
 import { Season } from "../../models/season/season";
 
@@ -9,6 +9,9 @@ import { Season } from "../../models/season/season";
 })
 export class SeasonsComponent implements OnInit {
   seasons: Array<Season> = [];
+
+  @Output()
+  selected: EventEmitter<Season> = new EventEmitter<Season>();
 
   constructor() {
     this.seasons = [new Season({
@@ -25,5 +28,11 @@ export class SeasonsComponent implements OnInit {
     })];
   }
 
-  ngOnInit() {}
+  select(season: Season) {
+    this.selected.emit(season);
+  }
+
+  ngOnInit() {
+    this.select(this.seasons[0]);
+  }
 }
