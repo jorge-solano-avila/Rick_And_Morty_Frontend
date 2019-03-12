@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatListModule } from "@angular/material/list";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -18,7 +19,8 @@ import { SeasonComponent } from "./components/season/season.component";
     BrowserAnimationsModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
