@@ -1,21 +1,27 @@
-import { Component, Input, SimpleChange, OnInit, OnChanges } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router, ParamMap } from "@angular/router";
 
 import { Episode, EpisodeData } from "../../models/episode/episode";
 import { Season } from "../../models/season/season";
 import { EpisodesResponse, EpisodeService } from "../../services/episode/episode";
+import { AppGlobal } from "../../app.global";
 
 @Component({
   selector: "app-season",
   templateUrl: "./season.html",
   styleUrls: ["./season.scss"]
 })
-export class SeasonComponent implements OnInit, OnChanges {
-  @Input()
+export class SeasonComponent implements OnInit {
   season: Season;
   isLoading: boolean;
   episodes: Array<Episode>;
 
-  constructor(private episodeService: EpisodeService) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private episodeService: EpisodeService
+  ) {
+    this.season = null;
     this.isLoading = true;
     this.episodes = [];
   }
@@ -28,12 +34,14 @@ export class SeasonComponent implements OnInit, OnChanges {
       });
   }
 
-  ngOnInit() {}
-
-  ngOnChanges(changes: {[key: string]: SimpleChange}) {
-    if (changes.season.previousValue !== changes.season.currentValue) {
-      this.isLoading = true;
-      this.getEpisodes();
-    }
+  ngOnInit() {
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      const id: number = +params.get("id");
+      this.season = AppGlobal.SEASONS.find((season: Season) => season.id === id);
+      if (this.season) {
+        this.isLoading = true;
+        this.getEpisodes();
+      }
+    });
   }
 }
