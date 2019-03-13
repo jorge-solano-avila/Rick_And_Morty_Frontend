@@ -4,8 +4,8 @@ import { Season } from "../../models/season/season";
 
 @Component({
   selector: "app-seasons",
-  templateUrl: "./seasons.component.html",
-  styleUrls: ["./seasons.component.scss"]
+  templateUrl: "./seasons.html",
+  styleUrls: ["./seasons.scss"]
 })
 export class SeasonsComponent implements OnInit {
   seasons: Array<Season> = [];
