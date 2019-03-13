@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router, ParamMap } from "@angular/router";
+import { ActivatedRoute, ParamMap } from "@angular/router";
 
 import { Episode, EpisodeData } from "../../models/episode/episode";
 import { Season } from "../../models/season/season";
@@ -18,7 +18,6 @@ export class SeasonComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private episodeService: EpisodeService
   ) {
     this.season = null;
