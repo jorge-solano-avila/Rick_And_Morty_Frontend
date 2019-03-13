@@ -26,4 +26,8 @@ export class EpisodeService {
   getAllBySeason(season: string): Observable<EpisodesResponse> {
     return this.http.get<EpisodesResponse>(`${this.episodesURL}?episode=${season}`);
   }
+
+  getById(id: number): Observable<EpisodeData> {
+    return this.http.get<EpisodeData>(`${this.episodesURL}${id}`);
+  }
 }
