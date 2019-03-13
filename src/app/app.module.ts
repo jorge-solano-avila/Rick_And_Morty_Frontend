@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatSidenavModule } from "@angular/material/sidenav";
@@ -9,15 +10,16 @@ import { MatCardModule } from "@angular/material/card";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { SeasonsComponent } from "./components/seasons/seasons.component";
-import { SeasonComponent } from "./components/season/season.component";
+import { SeasonsComponent } from "./components/seasons/seasons";
+import { SeasonComponent } from "./components/season/season";
 
 @NgModule({
   declarations: [AppComponent, SeasonsComponent, SeasonComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
