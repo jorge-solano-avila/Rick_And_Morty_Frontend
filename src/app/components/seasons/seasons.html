@@ -3,7 +3,7 @@
   <mat-list-item
     class="mat-list-option"
     *ngFor="let season of seasons"
-    routerLink="/seasons/{{ season.id }}"
+    [routerLink]="['/seasons/', season.id]"
   >
     {{ season.name }}
   </mat-list-item>
