@@ -1,0 +1,16 @@
+$break-small: 700px;
+
+.content {
+  padding: 20px;
+
+  &__loader {
+    margin: 0;
+    position: absolute;
+    top: 35%;
+    left: 45%;
+  }
+
+  &__detail {
+    
+  }
+}

@@ -1,1 +1,15 @@
+<div class="content" *ngIf="isLoading; else showEpisode">
+  <mat-spinner class="content__loader"></mat-spinner>
+</div>
 
+<ng-template #showEpisode>
+  <div class="content">
+    <h2>{{ episode?.name }}</h2>
+    <p><b>Air date: </b>{{ episode?.airDate | date: "dd/MM/yyyy" }}</p>
+    <p><b>Episode: </b>{{ episode?.episode }}</p>
+
+    <div class="content__detail">
+      
+    </div>
+  </div>
+</ng-template>
