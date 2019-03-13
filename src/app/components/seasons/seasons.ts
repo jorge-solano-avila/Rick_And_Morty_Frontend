@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Output, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 import { Season } from "../../models/season/season";
+import { AppGlobal } from "../../app.global";
 
 @Component({
   selector: "app-seasons",
@@ -10,29 +11,9 @@ import { Season } from "../../models/season/season";
 export class SeasonsComponent implements OnInit {
   seasons: Array<Season> = [];
 
-  @Output()
-  selected: EventEmitter<Season> = new EventEmitter<Season>();
-
   constructor() {
-    this.seasons = [new Season({
-      name: "Season 1",
-      code: "S01"
-    }),
-    new Season({
-      name: "Season 2",
-      code: "S02"
-    }),
-    new Season({
-      name: "Season 3",
-      code: "S03"
-    })];
+    this.seasons = AppGlobal.SEASONS;
   }
 
-  select(season: Season) {
-    this.selected.emit(season);
-  }
-
-  ngOnInit() {
-    this.select(this.seasons[0]);
-  }
+  ngOnInit() {}
 }
