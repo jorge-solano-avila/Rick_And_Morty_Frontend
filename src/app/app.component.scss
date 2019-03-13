@@ -10,8 +10,10 @@ $header-height: 64px;
   min-height: 100vh;
   max-height: 100%;
   padding-top: $header-height;
+  overflow: auto;
 
   &__sidenav {
+    position: fixed;
     padding: $header-height 10px 10px 10px;
   }
 
