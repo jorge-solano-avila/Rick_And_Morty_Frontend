@@ -50,6 +50,10 @@ export class Episode {
     return this._airDate;
   }
 
+  get episode(): string {
+    return this._episode;
+  }
+
   get characters(): Array<string> {
     return this._characters;
   }
