@@ -12,9 +12,15 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { SeasonsComponent } from "./components/seasons/seasons";
 import { SeasonComponent } from "./components/season/season";
+import { EpisodeComponent } from "./components/episode/episode";
 
 @NgModule({
-  declarations: [AppComponent, SeasonsComponent, SeasonComponent],
+  declarations: [
+    AppComponent,
+    SeasonsComponent,
+    SeasonComponent,
+    EpisodeComponent
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
