@@ -1,8 +1,32 @@
+$break-small: 700px;
+
 .content {
+  padding: 20px;
+
   &__loader {
     margin: 0;
     position: absolute;
     top: 35%;
     left: 45%;
+  }
+
+  &__episodes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media screen and (max-width: $break-small) {
+      flex-direction: column;
+    }
+
+    &__item {
+      flex: 45%;
+      max-width: 45%;
+      margin-bottom: 30px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 }
