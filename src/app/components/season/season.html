@@ -1,0 +1,22 @@
+<div class="content" *ngIf="isLoading; else showEpisodes">
+  <mat-spinner class="content__loader"></mat-spinner>
+</div>
+
+<ng-template #showEpisodes>
+  <div class="content">
+    <h2>{{ season.name }}</h2>
+
+    <div class="content__episodes">
+      <mat-card
+        class="content__episodes__item"
+        *ngFor="let episode of episodes"
+        [routerLink]="['/episodes/', episode.id]"
+      >
+        <mat-card-title>{{ episode.name }}</mat-card-title>
+        <mat-card-subtitle>{{
+          episode.airDate | date: "dd/MM/yyyy"
+        }}</mat-card-subtitle>
+      </mat-card>
+    </div>
+  </div>
+</ng-template>

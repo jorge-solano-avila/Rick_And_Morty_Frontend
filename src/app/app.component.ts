@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+
+import { Season } from "./models/season/season";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-  title = 'RickAndMorty';
+  selectedSeason: Season;
+
+  constructor() {
+    
+  }
+
+  onSelected(season: Season) {
+    this.selectedSeason = season;
+  }
 }

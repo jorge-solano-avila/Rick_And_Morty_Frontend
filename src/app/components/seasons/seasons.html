@@ -1,0 +1,10 @@
+<h3>Seasons</h3>
+<mat-list>
+  <mat-list-item
+    class="mat-list-option"
+    *ngFor="let season of seasons"
+    [routerLink]="['/seasons/', season.id]"
+  >
+    {{ season.name }}
+  </mat-list-item>
+</mat-list>

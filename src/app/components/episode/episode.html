@@ -1,0 +1,38 @@
+<div class="content" *ngIf="isLoading; else showEpisode">
+  <mat-spinner class="content__loader"></mat-spinner>
+</div>
+
+<ng-template #showEpisode>
+  <div class="content">
+    <h1 class="content__title">{{ episode?.name }}</h1>
+    <p><b>Air date: </b>{{ episode?.airDate | date: "dd/MM/yyyy" }}</p>
+    <p><b>Episode: </b>{{ episode?.episode }}</p>
+    <br>
+    <h2>Characters</h2>
+
+    <div class="content__characters">
+      <mat-card
+        class="content__characters__item"
+        *ngFor="let character of characters"
+        (click)="showCharacter(character)"
+      >
+        <mat-card-header>
+          <mat-card-title>{{ character.name }}</mat-card-title>
+          <mat-card-subtitle>{{ character.status }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="character.image" alt="Photo of {{ character.name }}">
+        <mat-card-content>
+          <p><b>Specie: </b>{{ character.species }}</p>
+          <p *ngIf="character.type"><b>Type: </b>{{ character.type }}</p>
+          <p><b>Gender: </b>{{ character.gender }}</p>
+          <p><b>Origin location: </b>{{ character.origin.name }}</p>
+          <p><b>Last known location: </b>{{ character.location.name }}</p>
+        </mat-card-content>
+      </mat-card>
+
+      <div *ngIf="charactersIsLoading">
+        <mat-spinner class="content__characters__loader"></mat-spinner>
+      </div>
+    </div>
+  </div>
+</ng-template>
